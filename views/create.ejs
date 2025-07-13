@@ -15,9 +15,13 @@
   <body>
     <main class="w-full h-screen bg-zinc-100 font-['Helvetica']">
       <nav class="flex px-10 justify-between items-center py-5 border-b">
-        <h3 class="text-2xl tracking-tight italic">
-          <a class="tracking-tight" href="/">Khattabook</a>
-        </h3>
+        <a class="tracking-tight" href="/">
+          <h3
+            class="text-2xl tracking-tight italic px-2 py-1 rounded border border-emerald-700"
+          >
+            Khattabook
+          </h3></a
+        >
         <div class="navlinks flex gap-5 items-center justify-between">
           <a
             class="tracking-tight px-4 py-2 bg-emerald-700 text-white rounded-md hover:bg-emerald-600 cursor-pointer transition-all duration-300"
@@ -33,13 +37,13 @@
         <form class="" action="/createhisaab" method="post">
           <input
             name="title"
-            class="text-md px-3 py-2 w-1/2 mb-5 rounded-md bg-zinc-200"
+            class="text-md px-3 py-2 w-full md:w-1/2 mb-5 rounded-md bg-zinc-200"
             type="text"
             placeholder="Shopping ka hisaab, ghar ka kharch..."
           />
           <textarea
             name="content"
-            class="block w-1/2 px-3 py-2 resize-none bg-zinc-200 rounded-md min-h-96"
+            class="block w-full md:w-1/2 px-3 py-2 resize-none bg-zinc-200 rounded-md min-h-96"
             placeholder="write your hisaab."
           ></textarea>
           <input

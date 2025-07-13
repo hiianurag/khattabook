@@ -24,22 +24,13 @@ app.get("/create", (req, res) => {
 });
 
 app.post("/createhisaab", (req, res) => {
-  const currentDate = new Date();
-  const date = `${currentDate.getDate()}-${
-    currentDate.getMonth() + 1
-  }-${currentDate.getFullYear()}`;
-
-  fs.writeFile(
-    `./files/${req.body.title} (${date}).txt`,
-    req.body.content,
-    (err) => {
-      if (err) {
-        console.log(err);
-        return;
-      }
-      res.redirect("/");
+  fs.writeFile(`./files/${req.body.title}.txt`, req.body.content, (err) => {
+    if (err) {
+      console.log(err);
+      return;
     }
-  );
+    res.redirect("/");
+  });
 });
 
 app.get(`/edit/:filename`, (req, res) => {
