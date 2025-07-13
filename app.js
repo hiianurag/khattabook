@@ -52,6 +52,16 @@ app.get(`/edit/:filename`, (req, res) => {
   });
 });
 
+app.get(`/hisaab/:filename`, (req, res) => {
+  fs.readFile(`./files/${req.params.filename}`, "utf-8", (err, data) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    res.render("hisaab", { data, filename: req.params.filename });
+  });
+});
+
 app.post(`/update/:filename`, (req, res) => {
   fs.writeFile(`./files/${req.params.filename}`, req.body.content, (err) => {
     if (err) {
