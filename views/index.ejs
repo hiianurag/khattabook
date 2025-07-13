@@ -14,7 +14,7 @@
 
   <body>
     <main class="w-full h-screen bg-zinc-100 font-['Helvetica']">
-      <nav class="flex px-10 justify-between items-center py-5">
+      <nav class="flex px-10 justify-between items-center py-5 border-b">
         <h3 class="text-2xl tracking-tight italic">Khattabook</h3>
         <div class="navlinks flex gap-5 items-center justify-between">
           <a class="tracking-tight" href="/">Home</a>
@@ -37,7 +37,7 @@
           class="hisaab w-fit min-w-[300px] items-center py-3 mb-3 px-5 gap-20 bg-emerald-700 flex justify-between rounded-md"
         >
           <div class="flex gap-4 text-white items-center">
-            <h3 class="text-2xl"><%= file %></h3>
+            <h3 class="text-2xl"><%= file.split(".")[0] %></h3>
             <a href="/hisaab"
               ><i
                 class="w-6 h-6 text-blue-500 flex items-center justify-center bg-white rounded-full ri-arrow-right-line"

@@ -23,6 +23,25 @@ app.get("/create", (req, res) => {
   res.render("create");
 });
 
+app.post("/createhisaab", (req, res) => {
+  const currentDate = new Date();
+  const date = `${currentDate.getDate()}-${
+    currentDate.getMonth() + 1
+  }-${currentDate.getFullYear()}`;
+
+  fs.writeFile(
+    `./files/${req.body.title} (${date}).txt`,
+    req.body.content,
+    (err) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      res.redirect("/");
+    }
+  );
+});
+
 app.get(`/edit/:filename`, (req, res) => {
   fs.readFile(`./files/${req.params.filename}`, "utf-8", (err, data) => {
     if (err) {
